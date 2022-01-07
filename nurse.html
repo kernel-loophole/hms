@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,700;1,400&family=Roboto+Mono:wght@300;400&display=swap');
+    body {
+        background: black;
+        color: wheat
+    }
+    
+    h1,
+    h2 {
+        font-family: 'Raleway', sans-serif;
+        font-weight: 700;
+        margin-bottom: -20%;
+    }
+    
+    h6 {
+        font-family: 'Raleway', sans-serif;
+        color: #882dff;
+        font-size: clamp(16px, 18px, 22px);
+    }
+    
+    p {
+        font-family: 'Roboto Mono', monospace;
+        font-size: clamp(12px, 14px, 26px);
+    }
+    
+    .cardsSection {
+        padding: 2%;
+        display: flex;
+        flex-flow: wrap;
+        justify-content: center;
+    }
+    
+    .cardAvatar {
+        padding: 2%;
+        margin: 2% 20px;
+        width: 260px;
+        height: 620px;
+        border-radius: 50px;
+        box-shadow: 2px 2px 12px 1px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+    }
+    
+    .header {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    
+    .avatar {
+        padding: 4%;
+    }
+    
+    .action-btn {
+        position: absolute;
+        top: 50px;
+        right: 50px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        box-shadow: 5px 5px 25px 0px rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Roboto Mono', monospace;
+        font-size: clamp(14px, 16px, 18px);
+        z-index: 2;
+    }
+    
+    .back-btn {
+        z-index: 2;
+        cursor: pointer;
+    }
+    
+    .action-btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    }
+    
+    .header-image {
+        background-image: url('doctor.jpg');
+        background-size: cover;
+        width: clamp(150px, 312px, 512px);
+        height: clamp(150px, 312px, 512px);
+        z-index: 1;
+        align-self: center;
+    }
+    
+    .circleAvatar {
+        width: clamp(120px, 220px, 352px);
+        height: clamp(120px, 220px, 352px);
+        background: linear-gradient( #882dff, transparent), linear-gradient( 90deg, #d098e7, transparent), linear-gradient( -90deg, #1c9ce5, transparent);
+        background-size: 400% 400%;
+        border-radius: 100%;
+        position: absolute;
+        left: min(22%, 15%);
+        top: max(2%, 5%);
+        z-index: -1;
+        -webkit-animation: gradientC 14s ease infinite;
+        -moz-animation: gradientC 14s ease infinite;
+        -o-animation: gradientC 14s ease infinite;
+        animation: gradientC 14s ease infinite;
+    }
+    
+    @-webkit-keyframes gradientC {
+        0% {
+            background-position: 74% 0%
+        }
+        50% {
+            background-position: 27% 100%
+        }
+        100% {
+            background-position: 74% 0%
+        }
+    }
+    
+    @-moz-keyframes gradientC {
+        0% {
+            background-position: 74% 0%
+        }
+        50% {
+            background-position: 27% 100%
+        }
+        100% {
+            background-position: 74% 0%
+        }
+    }
+    
+    @-o-keyframes gradientC {
+        0% {
+            background-position: 74% 0%
+        }
+        50% {
+            background-position: 27% 100%
+        }
+        100% {
+            background-position: 74% 0%
+        }
+    }
+    
+    @keyframes gradientC {
+        0% {
+            background-position: 74% 0%
+        }
+        50% {
+            background-position: 27% 100%
+        }
+        100% {
+            background-position: 74% 0%
+        }
+    }
+    
+    .content {
+        text-align: center;
+        padding: 6% 12%;
+        height: 80%;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: trasnparent;
+        margin-top: 300px;
+        margin-bottom: 50px;
+        position: relative;
+        bottom: 0;
+    }
+    
+    .moreInfo {
+        position: relative;
+        height: 600px;
+        background: linear-gradient( #882dff, transparent), linear-gradient( 90deg, #d098e7, transparent), linear-gradient( -90deg, #1c9ce5, transparent);
+        background-size: 400% 400%;
+        -webkit-animation: gradientC 14s ease infinite;
+        -moz-animation: gradientC 14s ease infinite;
+        -o-animation: gradientC 14s ease infinite;
+        animation: gradientC 14s ease infinite;
+        transform: translateY(-45px);
+    }
+    
+    .moreBtn {
+        background-color: white;
+        color: #882dff;
+        font-family: 'Roboto Mono', monospace;
+        font-size: clamp(12px, 14px, 26px);
+        padding: 10px 42px;
+        align-self: center;
+        text-align: center;
+        position: absolute;
+        left: 25%;
+        top: -2%;
+        border: solid #882dff 3px;
+        border-radius: 12px;
+        z-index: 2;
+    }
+    
+    .moreBtn:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+    
+    .moreInfo-content {
+        margin: 60px;
+        position: relative;
+    }
+    
+    .more-header {
+        margin-top: 3px;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 50px
+    }
+    
+    .more-details {
+        color: white;
+        font-weight: bold;
+        margin: 20px 0;
+    }
+</style>
+
+<body>
+    <div class="cardsSection">
+
+        <!--1-->
+        <div class="cardAvatar">
+            <div class="header">
+                <div class="avatar">
+                    <div class="header-image"></div>
+                    <div class="circleAvatar"></div>
+                </div>
+                <div class="action-btn">
+                    <div class="back-btn"><i class="far fa-long-arrow-left"></i></div>
+                </div>
+            </div>
+            <div class="content">
+                <h1>Doctor3</h1>
+                <h6>Family physicians</h6>
+                <h3>12AM-5AM</h3>
+                <p>Summus brains sit, morbo vel maleficia? De apocalypsi</p>
+            </div>
+            <div class="moreInfo">
+                <div class="moreInfo-header">
+                    <button class="moreBtn">more</button>
+                </div>
+                <div class="moreInfo-content">
+                    <div class="more-header">
+                        <h2>Hola!</h2>
+                    </div>
+                    <div class="more-details">
+
+                        <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.</p>
+                        <p>De carne lumbering animata corpora quaeritis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--2-->
+        <div class="cardAvatar">
+            <div class="header">
+                <div class="avatar">
+                    <div class="header-image"></div>
+                    <div class="circleAvatar"></div>
+                </div>
+                <div class="action-btn">
+                    <div class="back-btn"><i class="far fa-long-arrow-left"></i></div>
+                </div>
+            </div>
+            <div class="content">
+                <h1>Doctor2</h1>
+                <h6>Internists</h6>
+                <h3>12AM-5PM</h3>
+                <p>Summus brains sit, morbo vel maleficia? De apocalypsi</p>
+            </div>
+            <div class="moreInfo">
+                <div class="moreInfo-header">
+                    <button class="moreBtn">More</button>
+                </div>
+                <div class="moreInfo-content">
+                    <div class="more-header">
+                        <h2>Hola!</h2>
+                    </div>
+                    <div class="more-details">
+                        <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.</p>
+                        <p>De carne lumbering animata corpora quaeritis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--3-->
+        <div class="cardAvatar">
+            <div class="header">
+                <div class="avatar">
+                    <div class="header-image"></div>
+                    <div class="circleAvatar"></div>
+                </div>
+                <div class="action-btn">
+                    <div class="back-btn"><i class="far fa-long-arrow-left"></i></div>
+                </div>
+            </div>
+            <div class="content">
+                <h1>Abigail Pérez</h1>
+                <h6>Neurologists</h6>
+                <h3>9AM-12PM</h3>
+                <p>Summus brains sit, morbo vel maleficia? De apocalypsi</p>
+            </div>
+            <div class="moreInfo">
+                <div class="moreInfo-header">
+                    <button class="moreBtn">More</button>
+                </div>
+                <div class="moreInfo-content">
+                    <div class="more-header">
+                        <h2>Hola!</h2>
+                    </div>
+                    <div class="more-details">
+                        <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.</p>
+                        <p>De carne lumbering animata corpora quaeritis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        //anime.js library
+        let drawer_open = false;
+
+        document.querySelector(".moreBtn").addEventListener("mouseup", function() {
+            cta_button_hide.play();
+        })
+
+        document.querySelector(".back-btn").addEventListener("mouseup", function() {
+            if (drawer_open) {
+                slidedown.play();
+                cta_button_show.play();
+            }
+        })
+
+
+        let cta_button_show = anime({
+            targets: ['.moreBtn'],
+            translateY: ['-15', '0'],
+            opacity: ['0', '1'],
+            easing: 'easeInOutSine',
+            delay: anime.stagger(200),
+            autoplay: false,
+            // loop: false
+            duration: 500,
+            complete: function() {}
+        });
+
+        let cta_button_hide = anime({
+            targets: ['.moreBtn'],
+            translateY: ['0', '-15'],
+            opacity: ['1', '0'],
+            easing: 'easeInOutSine',
+            delay: anime.stagger(200),
+            autoplay: false,
+            // loop: false
+            duration: 500,
+            complete: function() {
+                slideup.play();
+                drawer_open = true;
+            }
+        });
+
+
+        let slidedown = anime({
+            targets: '.moreInfo',
+            translateY: ['-330px', '-40px'],
+            duartion: 1000,
+            autoplay: false,
+            begin: function() {
+                show_hideCTA("block");
+                drawer_open = false;
+            }
+        })
+
+        let slideup = anime({
+            targets: '.moreInfo',
+            translateY: ['-40px', '-330px'],
+            autoplay: false,
+            begin: function() {
+                show_hideCTA("none");
+
+                function hide_content() {
+                    document.querySelector(".moreInfo-content").style.display = 'none';
+                }
+            }
+        })
+
+
+
+        function show_hideCTA(param) {
+            document.querySelector(".moreBtn").style.display = param;
+        }
+    </script>
+</body>
+
+</html>

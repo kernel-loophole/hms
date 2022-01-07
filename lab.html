@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Report</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!--GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Merriweather:wght@300;400;700;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+
+
+</head>
+<style>
+    /*CUSTOM SCROLL BAR*/
+    
+    *,
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    *,
+    *:after,
+    *:before {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    
+     :root {
+        scrollbar-color: rgb(210, 210, 210) rgb(46, 54, 69) !important;
+        scrollbar-width: thin !important;
+        --white: #fff;
+        --black: #131417;
+        --primary: #5bc348;
+        --primarylite: #53b141;
+        --gray: #6d7175;
+        --dark: #253248;
+        --darklite: #364256;
+        --lite: #f8f9fa;
+    }
+    
+     ::-webkit-scrollbar {
+        height: 12px;
+        width: 8px;
+        background: var(--dark);
+    }
+    
+     ::-webkit-scrollbar-thumb {
+        background: gray;
+        -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
+    }
+    
+     ::-webkit-scrollbar-corner {
+        background: var(--dark);
+    }
+    /*DEFAULT*/
+    
+    body {
+        font-family: 'Source Sans Pro', sans-serif;
+        margin: 0;
+        overflow-x: hidden !important;
+    }
+    
+    .title {
+        font-family: 'Merriweather', serif;
+    }
+    
+    a {
+        text-decoration: none;
+        transition: 0.5s;
+        outline: none !important;
+    }
+    
+    li {
+        list-style: none;
+    }
+    
+    input,
+    textarea,
+    select,
+    button {
+        outline: none !important;
+    }
+    
+    fieldset {
+        border: 0;
+    }
+    
+    p {
+        letter-spacing: 0.08em;
+        line-height: 1.8em;
+        color: var(--gray);
+    }
+    
+    img {
+        min-width: 100%;
+    }
+    
+    em {
+        font-style: normal;
+        color: var(--dark);
+    }
+    
+    .btn1,
+    .btn2 {
+        padding: 15px 20px;
+        border-radius: 40px;
+        text-align: center;
+        display: inline-block;
+        border: 0;
+    }
+    
+    .btn1 {
+        background-color: var(--primary);
+        color: var(--white);
+    }
+    
+    .btn1:hover {
+        background-color: var(--primarylite);
+    }
+    
+    .btn2 {
+        background-color: var(--dark);
+        color: var(--white);
+    }
+    
+    .btn2:hover {
+        background-color: var(--darklite);
+    }
+    
+     ::-webkit-input-placeholder {
+        opacity: 1 !important;
+    }
+    
+     :-moz-placeholder {
+        opacity: 1 !important;
+    }
+    
+     ::-moz-placeholder {
+        opacity: 1 !important;
+    }
+    
+     :-ms-input-placeholder {
+        opacity: 1 !important;
+    }
+    
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+        background-repeat: no-repeat;
+        background-position-x: 99%;
+        background-position-y: 10px;
+        border: 1px solid #dfdfdf;
+        border-radius: 2px;
+        margin-right: 4rem;
+        padding: 1rem;
+        padding-right: 4rem;
+    }
+    
+    @media (max-width:820px) {
+        .btn1,
+        .btn2 {
+            padding: 10px 15px;
+        }
+    }
+    /*SECTION1*/
+    
+    .section1 {
+        width: 100%;
+        position: relative;
+        background-color: var(--primary);
+        display: flex;
+        align-items: center;
+        margin: 50px 0;
+    }
+    
+    .section1 section {
+        width: 100%;
+        padding: 2rem;
+    }
+    
+    .section1 section .rows {
+        display: flex;
+        align-items: center;
+    }
+    
+    .section1 section .title {
+        font-size: 2em;
+        padding: 0 2rem;
+    }
+    
+    .section1 section .form .title {
+        font-size: 1.3em;
+        padding: 0 0rem;
+    }
+    
+    .section1 section span {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 2rem;
+    }
+    
+    .section1 section span h3 {
+        font-weight: 400;
+    }
+    
+    .section1 section span .fa {
+        background-color: var(--dark);
+        padding: 10px;
+        font-size: 2em;
+        min-width: 55px;
+        text-align: Center;
+        color: var(--white);
+        border-radius: 10px;
+        margin: 0 10px;
+    }
+    
+    .section1 .form {
+        min-width: 40%;
+        width: 40%;
+        background-color: var(--dark);
+        padding: 2rem;
+        position: absolute;
+        top: -30px;
+        margin: auto;
+        z-index: 11;
+        box-shadow: 0px 6px 16px -6px rgba(1, 1, 1, 0.5);
+        text-align: Center;
+    }
+    
+    .section1 .form .title {
+        text-transform: uppercase;
+        color: var(--primary);
+    }
+    
+    .section1 .form:before {
+        position: absolute;
+        top: 0;
+        left: -30px;
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 0 30px 30px;
+        border-color: transparent transparent var(--dark) transparent;
+    }
+    
+    .section1 .form:after {
+        position: absolute;
+        top: 0;
+        right: -30px;
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 30px 0 0 30px;
+        border-color: transparent transparent transparent var(--dark);
+    }
+    
+    .section1 .form input,
+    .section1 .form select,
+    .section1 .form textarea {
+        width: 100%;
+        padding: 1rem;
+        border: 0;
+        border-radius: 5px;
+        resize: none;
+        font-weight: 400;
+        color: rgba(1, 1, 1, 0.7);
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+    
+    .section1 .form .btn1 {
+        display: block;
+        border-radius: 5px;
+        width: 100%;
+    }
+    
+    @media (max-width:1020px) {
+        .section1 {
+            display: block;
+        }
+        .section1 section {
+            padding: 1rem;
+        }
+        .section1 section .title {
+            font-size: 1.2em;
+            padding: 0 1rem;
+        }
+        .section1 section span {
+            padding: 0.1rem 1rem;
+        }
+        .section1 section span .fa {
+            font-size: 1.3em;
+            min-width: 45px;
+        }
+        .section1 .form {
+            width: 100%;
+            padding: 1rem;
+            position: relative;
+            top: 0px;
+            border-radius: 5px;
+        }
+        .section1 .form:before,
+        .section1 .form:after {
+            display: none;
+        }
+    }
+    
+    @media (max-width:820px) {
+        .section1 section .rows {
+            display: block;
+        }
+    }
+</style>
+
+<body>
+    <!--FONT AWESOME-->
+
+    <!--SECTION1-->
+    <div class="section1">
+        <section>
+            <h1 class="title inline-photo2 show-on-scroll2"><em>Add Patient</em> Report</h1>
+            <div class="rows">
+                <span class="inline-photo show-on-scroll">
+<i class="fa fa-phone"></i>
+<h3>Diagonisve </h3>
+</span>
+                <span class="inline-photo show-on-scroll">
+<i class="fa fa-gavel"></i>
+<h3>Paid Legal Opinion</h3>
+</span>
+            </div>
+            <div class="rows">
+                <span class="inline-photo show-on-scroll">
+<i class="fa fa-briefcase-medical"></i>
+<h3>submit </h3>
+</span>
+                <span class="inline-photo show-on-scroll">
+<i class="fa fa-credit-card"></i>
+<h3>add</h3>
+</span>
+            </div>
+        </section>
+        <section>
+            <div class="form">
+                <h1 class="title">Submit Report</h1>
+                <form id="quote-form" action="">
+                    <fieldset>
+                        <input type="text" name="fname" id="fname" placeholder="Fullname*" maxlength="60" required="" />
+                    </fieldset>
+                    <fieldset>
+                        <input type="tel" name="contact" id="contact" placeholder="Mobile number*" maxlength="15" required="" />
+                    </fieldset>
+                    <fieldset>
+                        <input type="email" name="email" id="email" placeholder="Email*" maxlength="100" required="" />
+                    </fieldset>
+                    <fieldset>
+                        <select name="service" id="service">
+<option value="0">Diases</option>
+<option value="1">Colds and Flu</option>
+<option value="2">Conjunctivitis</option>
+<option value="3">Headaches</option>
+<option value="4">Mononucleosis</option>
+
+<option value="7">Other Diases</option>
+</select>
+                    </fieldset>
+                    <fieldset>
+                        <textarea name="message" id="message" maxlength="500" placeholder="Your message here...*" required=""></textarea>
+                    </fieldset>
+                    <fieldset>
+                        <button type="submit" class="btn1">Submit</button>
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
